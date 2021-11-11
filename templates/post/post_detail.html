@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block header %}
+{% if  object.imagem %}
+<header class="masthead" style="background-image: url({{post.imagem.url}}) ">
+{% else %}
+<header class="masthead" style="background-image: url({% static 'assets/img/about-bg.jpg' %}) ">
+{% endif %}
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>maollo Blog</h1>
+                            <span class="subheading">é isso ai</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+{% endblock header %}
+
+
+
+{% block content  %}
+<h1>
+{{post.titulo}}
+</h1>
+
+<h4> {{post.imagem}} <br> {{post.descrição}} <br> {{post.datacriacao}} <br> {{post.autor}} <br> {{post.estado_atual}}   </h2>
+
+{% endblock content  %}
